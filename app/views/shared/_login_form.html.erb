@@ -1,10 +1,10 @@
-<% action_url = method == :login ? sessions_url : users_url %>
+<% action_url = method == :login ? session_index_url : users_url %>
 <% submit_text = method == :login ? "Login" : "Create Account" %>
 
 <form action="<%= action_url %>" method="post">
   <%= auth_token %>
-  <label for="username_field"></label>
-  <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+  <label for="username_field">Username</label>
+  <input type="text" name="user[username]" id="username_field">
   <label for="password_field">Password:</label>
   <input type="password" name="user[password]" id="password_field">
 
