@@ -17,9 +17,9 @@ RSpec.describe UsersController, type: :controller do
     end
 
     context "with valid params" do
-      it "redirects to the root page" do
+      it "redirects to the users profile page" do
         post :create, params: { user: { username: "joep", password: "joespassword" } }
-        expect(response).to redirect_to(:root)
+        expect(response).to redirect_to(action: :show, id: assigns(:user).id)
       end
     end
   end
