@@ -12,7 +12,12 @@ class SessionController < ApplicationController
       render :new
     else
       login_user!(@user)
-      redirect_to root_url
+      redirect_to user_url(@user)
     end
+  end
+
+  def destroy
+    current_user.reset_session_token! && session[:session_token] = nil
+    redirect_to users_url
   end
 end

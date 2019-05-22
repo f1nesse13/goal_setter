@@ -13,6 +13,11 @@
     <% flash[:errors].to_a.each do |error| %>
       <p><%= error %></p>
     <% end %>
+    <% if current_user.nil? %>
+      <p><%= link_to("Login", new_session_url) or link_to("Sign Up", new_user_url) %></p>
+    <% else %>
+      <p><%= link_to("Logout", session_url, method: :delete) %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
