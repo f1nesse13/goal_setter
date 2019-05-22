@@ -2,3 +2,908 @@
   ↳ bin/rails:9
   [1m[35m (818.4ms)[0m  [1m[35mCREATE DATABASE "aa_Great_Goals_test" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "aa_Great_Goals_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "aa_Great_Goals_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (101.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (116.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4525715623593191685)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190522042948)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (81.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190522042948_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190522042948"]]
+  ↳ bin/rails:9
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-22 14:30:00.961513"], ["updated_at", "2019-05-22 14:30:00.961513"]]
+  ↳ bin/rails:9
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4525715623593191685)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-05-22 10:42:52 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/f1nesse13/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant GoalsController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-22 11:18:44 -0400
+  
+ActionController::RoutingError (uninitialized constant GoalsController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2019-05-22 11:18:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (4.9ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field"></label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250101276740'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1527409943680773380_70250101254700'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/users/new" for ::1 at 2019-05-22 11:19:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1478ms (Views: 1467.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:19:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DpOUY50/tE2sA1C0//AjpXwQnwQXkTpAlY79cIkweC3ibx+vyyv/B+Xz9eFdOOTAVA+bEeLOT/sBVIgDuedZfQ==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fc8b8145fe0>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started GET "/session/new" for ::1 at 2019-05-22 11:20:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/session/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2019-05-22 11:20:51 -0400
+  
+ActionController::RoutingError (uninitialized constant SessionController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2019-05-22 11:21:11 -0400
+  
+LoadError (Unable to autoload constant SessionController, expected /home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/controllers/session_controller.rb to define it):
+  
+activesupport (5.2.3) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.3) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.3) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2019-05-22 11:22:27 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/session/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...( render 'shared/login', @user: user, method: :login );
+...                              ^):
+  
+app/views/session/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+Started GET "/session/new" for ::1 at 2019-05-22 11:22:52 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/session/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...der 'shared/login_form', @user: user, method: :login );
+...                              ^):
+  
+app/views/session/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+Started GET "/session/new" for ::1 at 2019-05-22 11:23:34 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (251.0ms)
+  Rendered session/new.html.erb within layouts/application (254.8ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_url' for #<#<Class:0x00007fc8bc382f70>:0x00007fc8bc5886d0>
+Did you mean?  session):
+    1: <% action_url = method == :login ? sessions_url : users_url %>
+    2: <% submit_text = method == :login ? "Login" : "Create Account" %>
+    3: 
+    4: <form action="<%= action_url %>" method="post">
+  
+app/views/shared/_login_form.html.erb:1:in `_app_views_shared__login_form_html_erb___874715399994432857_70250065081220'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250065053560'
+Started GET "/session/new" for ::1 at 2019-05-22 11:23:55 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (218.7ms)
+  Rendered session/new.html.erb within layouts/application (220.1ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `session_url' for #<#<Class:0x00007fc8bc382f70>:0x00007fc8c4f80fb8>
+Did you mean?  session_index_url):
+    1: <% action_url = method == :login ? session_url : users_url %>
+    2: <% submit_text = method == :login ? "Login" : "Create Account" %>
+    3: 
+    4: <form action="<%= action_url %>" method="post">
+  
+app/views/shared/_login_form.html.erb:1:in `_app_views_shared__login_form_html_erb___874715399994432857_70250137325300'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250137391820'
+Started GET "/session/new" for ::1 at 2019-05-22 11:24:09 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (3.9ms)
+  Rendered session/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field"></label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250064590360'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250064505260'
+Started GET "/session/new" for ::1 at 2019-05-22 11:25:23 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (2.4ms)
+  Rendered session/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field"></label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250102236060'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250102219640'
+Started GET "/session/new" for ::1 at 2019-05-22 11:25:32 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (3.1ms)
+  Rendered session/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field"></label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= @user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250138500460'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250138419500'
+Started GET "/session/new" for ::1 at 2019-05-22 11:25:54 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered session/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 76ms (Views: 66.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/session/new" for ::1 at 2019-05-22 11:26:02 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.6ms)
+  Rendered session/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-05-22 11:26:14 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (1.6ms)
+  Rendered session/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-05-22 11:26:18 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<SessionController:0x00007fc8b819bb20>
+Did you mean?  super):
+  
+app/controllers/session_controller.rb:8:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:28:48 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<SessionController:0x00007fc8c5019f10>
+Did you mean?  super):
+  
+app/controllers/session_controller.rb:8:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:29:27 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jpell"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (2.7ms)
+  Rendered session/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250039310360'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250062356720'
+app/controllers/session_controller.rb:12:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:29:49 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jpell"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (7.5ms)
+  Rendered session/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= @user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250145473580'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250145468400'
+app/controllers/session_controller.rb:12:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:30:10 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jpell"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (1.8ms)
+  Rendered session/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= @user[:username] %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250064123780'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250064085780'
+app/controllers/session_controller.rb:12:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:30:49 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jpell"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (12.4ms)
+  Rendered session/new.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= @user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250095933020'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250095911200'
+app/controllers/session_controller.rb:12:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:31:05 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"j5o4+mWiTpj6fSzvbu2bee/aZWCTAGwbUUyJdTA5ta1jZrM2M7YF0rONibrMJVwcx8VhdWZfGaDFlvwGAO6U/Q==", "user"=>{"username"=>"jpell", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jpell"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (13.2ms)
+  Rendered session/new.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250137493020'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250137424900'
+app/controllers/session_controller.rb:12:in `create'
+Started GET "/session/new" for ::1 at 2019-05-22 11:31:08 -0400
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.8ms)
+  Rendered session/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 26.9ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/session" for ::1 at 2019-05-22 11:31:12 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"K5SxI9v7VISOstBgZb8pDPS06FBfx2UHyGGIGN8XKwnHaDrvje8fzsdCdTXHd+5p3KvsRaqYELxcu/1r78AKWQ==", "user"=>{"username"=>"finness", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "finness"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (2.8ms)
+  Rendered session/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    4: <form action="<%= action_url %>" method="post">
+    5:   <%= auth_token %>
+    6:   <label for="username_field">Username</label>
+    7:   <input type="text" name="user[username]" id="username_field" value="<%= user.username %>">
+    8:   <label for="password_field">Password:</label>
+    9:   <input type="password" name="user[password]" id="password_field">
+   10: 
+  
+app/views/shared/_login_form.html.erb:7:in `_app_views_shared__login_form_html_erb___874715399994432857_70250064828620'
+app/views/session/new.html.erb:3:in `_app_views_session_new_html_erb__3342567266173165777_70250064782420'
+app/controllers/session_controller.rb:12:in `create'
+Started POST "/session" for ::1 at 2019-05-22 11:32:30 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"K5SxI9v7VISOstBgZb8pDPS06FBfx2UHyGGIGN8XKwnHaDrvje8fzsdCdTXHd+5p3KvsRaqYELxcu/1r78AKWQ==", "user"=>{"username"=>"finness", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "finness"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering session/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (1.9ms)
+  Rendered session/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 84ms (Views: 79.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/session" for ::1 at 2019-05-22 11:32:59 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"9j3njW4ynzs9nOtzw99ybasSlRV+bqlktez+fLDq0moawWxBOCbUcXRsTiZhF7UIgw2RAIsx3N8hNosPgD3zOg==", "user"=>{"username"=>"lmao", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lmao"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/session_controller.rb:11:in `create'
+Started GET "/users/new" for ::1 at 2019-05-22 11:33:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (179.7ms)
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fc8c52232e8>:0x00007fc8c522b3f8>
+Did you mean?  @user):
+    1: <h1>Sign Up</h1>
+    2: 
+    3: <%= render 'shared/login_form', user => @user, method: :signup %>
+  
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1527409943680773380_70250138779800'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/users/new" for ::1 at 2019-05-22 11:33:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:34:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"gwe0+Hsmqw97wsM6Fc/2ZbuH4SbLQ8kTNPnW6oKpmA9v+z80LTLgRTIyZm+3BzEAk5jlMz4cvKigI6OZsn65Xw==", "user"=>{"username"=>"hellos", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007fc8c4a0d810>
+Did you mean?  users_path):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2019-05-22 11:34:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"gwe0+Hsmqw97wsM6Fc/2ZbuH4SbLQ8kTNPnW6oKpmA9v+z80LTLgRTIyZm+3BzEAk5jlMz4cvKigI6OZsn65Xw==", "user"=>{"username"=>"hellos", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hellos"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JhWPWGSXsHcTwi86SyK49A"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 222ms (Views: 66.7ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:43:16 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"GNzBUCbNZxj4OWO6IlUu/vj9lyFabdHdnbSHcmvWtIr0IEqccNksUrHJxu+Anemb0OKTNK8ypGYJbvIBWwGV2g==", "user"=>{"username"=>"djskl", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "djskl"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Nc39-F_O77y-sQfN-CZLlw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 112ms (Views: 23.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:43:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"xe14Y4xjcbkzYR+MLajX2Rot9n7J3j8BIym4WDR0VawpEfOv2nc683qRutmPYBC8MjLyazyBSrq3880rBKN0/A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bOjuerYCy0xLAqrK9wJ-tQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 110ms (Views: 20.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:48:16 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"U7zX8pGe+ePwkzrDG1+aomgxtxKa4EOizuQiJmXoGVi/QFw+x4qyqbljn5a5l13HQC6zB2+/NhlaPldVVT84CA==", "user"=>{"username"=>"dksljld", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dksljld"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PgsHBwUJIPqYTRtydhG1_A"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 111ms (Views: 20.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 11:50:02 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"nn0FUtPLCgI06Rn6NxVKr8F8PGiPs4xB23ga6qMO+u1ygY6ehd9BSH0ZvK+V3Y3K6WM4fXrs+fpPom+Zk9nbvQ==", "user"=>{"username"=>"weqeqw", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "weqeqw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "r4fmVonmURAYrr3JOAC1Ug"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 113ms (Views: 23.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-22 11:51:01 -0400
+Processing by UsersController#new as */*
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_login_form.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/" for ::1 at 2019-05-22 11:51:23 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"dkshad"}}
+HTTP Origin header (chrome-extension://coohjcphdfgbiolnekdpbcijmhambjff) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

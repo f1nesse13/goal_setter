@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% flash[:errors].to_a.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

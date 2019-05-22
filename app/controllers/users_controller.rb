@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    user = User.new()
+    @user = User.new()
     render :new
   end
 
@@ -13,5 +13,11 @@ class UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 end
