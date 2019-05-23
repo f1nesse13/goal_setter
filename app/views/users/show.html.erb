@@ -1,1 +1,17 @@
-<h1><%= @user.username %>'s Profile</h1>
+<h2><%= @user.username %>'s Profile</h2>
+
+<div class="profile_user_comments">
+  <%# COMMENTS FOR USER GO HERE %>
+</div>
+
+<h3><%= @user.username %>'s Goals</h3>
+<div class="profile_goals">
+  <ul>
+    <% @goals.each do |goal| %>
+      <% if goal.public %>
+        <li><%= link_to(goal, goal_url(goal)) %></li> 
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<%= link_to("All Users", root_url) %>
