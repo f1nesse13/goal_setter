@@ -1,0 +1,16 @@
+<div class="index_goals">
+<h2>Your Goals</h2>
+
+<%= link_to("Add a new goal", new_goal_url) %>
+<ul>
+  <% @goals.each do |goal| %>
+    <li><%= link_to(goal.title, goal_url(goal)) %></li>
+    <p><%= goal.public ? 'public' : 'private' %></p>
+    <p><%= goal.completed ? 'Complete' : 'Not Completed' %></p>
+    <br>
+    <%= button_to(goal.completed ? "Mark as incomplete" : "Mark as complete", goal_url(goal), method: :patch) %>
+    <br>
+    <%= button_to('Delete this goal', goal_url(goal), method: :delete) %>
+  <% end %>
+</ul>
+</div>

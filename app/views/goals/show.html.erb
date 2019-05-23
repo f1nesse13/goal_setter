@@ -1,0 +1,17 @@
+<div class="show_goal">
+  <h3>Goal:</h3>
+
+  <ul>
+    <li><h4>Title</h4><%= @goal.title %></li>
+    <li><h4>Details</h4><%= @goal.details %></li>
+    <li><h4>Visibility</h4><%= @goal["public"] == true ? "Public" : "Private" %></li>
+    <li><h4>Status</h4><%= @goal.completed == true ? "Completed" : "Not Completed" %></li>
+    </ul>
+    <br>
+    <% if current_user.id == @goal.user_id %>
+      <%= button_to(@goal.completed ? "Mark as incomplete" : "Mark as complete", goal_url(@goal), method: :patch) %>
+    <br>
+    <%= button_to('Delete this goal', goal_url(@goal), method: :delete) %>
+    <% end %>
+  
+</div>
