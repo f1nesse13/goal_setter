@@ -8,10 +8,15 @@
 <div class="profile_goals">
   <ul>
     <% @goals.each do |goal| %>
-      <% if goal.public %>
-        <li><%= link_to(goal, goal_url(goal)) %></li> 
+      <% if goal.public || goal.user_id == current_user.id %>
+        <li><%= link_to(goal.title, goal_url(goal)) %></li> 
+      <% end %>
+      <% if goal.user_id == current_user.id %>
+        <%= button_to(goal.completed == true ? "Mark as incomplete" : "Mark as complete", goal_url(goal), method: :patch) %>
       <% end %>
     <% end %>
   </ul>
 </div>
 <%= link_to("All Users", root_url) %>
+<br>
+<%= link_to("Create Goal", new_goal_url) %>
