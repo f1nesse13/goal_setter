@@ -907,3 +907,120 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2019-05-22 12:21:53 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"LPdD6ocS9o8EcnVbyROuyg+SdsEZfG5OAf01FPnHFCLAC8gm0Qa9xU2C0A5r22mvJ41y1OwjG/WVJ0BnyRA1cg==", "user"=>{"username"=>"joep", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "joep"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "501iyyyeQrAYjMFI9XnLxA"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "joep"], ["password_digest", "$2a$10$CvOG2fOYdN.CPPf9pWeyVOr1WLBXHHQLtPKPn7HgoEoch7RA55AlG"], ["session_token", "501iyyyeQrAYjMFI9XnLxA"], ["created_at", "2019-05-22 16:21:53.565337"], ["updated_at", "2019-05-22 16:21:53.565337"]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+Redirected to http://localhost:3000/users
+Completed 302 Found in 134ms (ActiveRecord: 39.2ms)
+
+
+Started GET "/users" for ::1 at 2019-05-22 12:21:53 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2019-05-22 12:23:12 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2019-05-22 12:23:54 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+'.freeze; end ;
+          ^~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/f1nesse13/Documents/AppAcademy/projects/Rails/aa_Great_Goals/app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/index.html.erb:5: syntax error, unexpected end, expecting ')'
+app/views/users/index.html.erb:7: syntax error, unexpected ensure, expecting ')'
+app/views/users/index.html.erb:9: syntax error, unexpected end, expecting ')'
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users" for ::1 at 2019-05-22 12:24:48 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4525715623593191685)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGoals (20190522185209)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (96.3ms)[0m  [1m[35mCREATE TABLE "goals" ("id" bigserial primary key, "title" character varying NOT NULL, "details" text, "public" boolean DEFAULT TRUE NOT NULL, "completed" boolean DEFAULT FALSE NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190522185209_create_goals.rb:3
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE  INDEX  "index_goals_on_user_id" ON "goals"  ("user_id")[0m
+  ↳ db/migrate/20190522185209_create_goals.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190522185209"]]
+  ↳ bin/rails:9
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4525715623593191685)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
