@@ -8,7 +8,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-
+    @comments = @goal.comments
     if @goal["public"] == true || @goal.user_id == current_user.id
       render :show
     else

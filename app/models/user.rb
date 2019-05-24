@@ -8,6 +8,7 @@ class User < ApplicationRecord
                    foreign_key: :user_id,
                    class_name: "Goal"
 
+  has_many :comments, as: :commentable
   attr_reader :password
 
   after_initialize :ensure_session_token

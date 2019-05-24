@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @goals = @user.goals
+    @comments = Comment.where(commentable_type: "User", commentable_id: @user.id)
     render :show
   end
 

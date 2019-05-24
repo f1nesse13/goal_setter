@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
   def redirect_if_logged_out
     redirect_to new_session_url unless logged_in?
   end
+
+  def comment_type
+    @comments = params[:user_id] == nil ? Comment.all.where({ commentable_type: "Goal", commentable_id: params[:goal_id] }) : Comment.all.where({ commentable_type: "User", commentable_id: params[:user_id] })
+    @comments
+  end
 end
