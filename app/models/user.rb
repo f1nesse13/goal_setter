@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Commentable
   validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
@@ -8,7 +9,6 @@ class User < ApplicationRecord
                    foreign_key: :user_id,
                    class_name: "Goal"
 
-  has_many :comments, as: :commentable
   attr_reader :password
 
   after_initialize :ensure_session_token
