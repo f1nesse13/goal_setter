@@ -9,7 +9,7 @@
     </ul>
     <h3>Add a comment</h3>
     <div>
-      <%= render "comments/comment_form", comment_type: :user, user_id: @user.id %>
+      <%= render "comments/comment_form", comment_type: :user, user_id: @user.id, commentable_type: "User", commentable_id: @user.id %>
     </div>
 </div>
 

@@ -24,7 +24,7 @@
       </ul>
     <h3>Add a comment</h3>
     <div>
-      <%= render "comments/comment_form", comment_type: :goal, goal_id: @goal.id %>
+      <%= render "comments/comment_form", comment_type: :goal, goal_id: @goal.id, commentable_type: "Goal", commentable_id: @goal.id %>
     </div>
     </div>
   

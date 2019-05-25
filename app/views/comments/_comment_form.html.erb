@@ -1,6 +1,8 @@
 <% type_url = comment_type == :user ? user_comments_url(user_id) : goal_comments_url(goal_id) %>
 <form action="<%= type_url %>" method="post">
 <%= auth_token %>
+<input type="hidden" name="comment[commentable_type]" value="<%= commentable_type %>">
+<input type="hidden" name="comment[commentable_id]" value="<%= commentable_id %>">
 <label for="comment_field">Comment
   <textarea name="comment[body]" id="comment_field"></textarea>
 </label>

@@ -7,20 +7,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
-    @comment.commentable_type = params[:user_id] == nil ? "Goal" : "User"
-    @comment.commentable_id = params[:user_id] == nil ? params[:goal_id] : params[:user_id]
     redirect = params[:user_id] == nil
-
     if @comment.save
       flash[:notice] = ["Comment saved"]
       if redirect
-        redirect_to goal_url(params[:goal_id])
+        redirect_to goal_url(@comment.commentable_id)
       else
-        redirect_to user_url(params[:user_id])
+        redirect_to user_url(@comment.commentable_id)
       end
     else
       flash[:error] = ["Unable to add comment"]
-      render :new
+      redirect_to users_url
     end
   end
 
